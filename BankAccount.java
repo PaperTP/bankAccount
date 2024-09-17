@@ -35,7 +35,7 @@ public boolean logIn(String username, String password)
 //accessor method - allows us to access (read-only) a private instance variable
 public double getBalance()
 {
-    if (loggedIn == true)
+    if (loggedIn)
     {
         return balance;
     }
@@ -47,9 +47,9 @@ public double getBalance()
 
 public double deposit(double amount)
 {
-    if (loggedIn == true)
+    if (loggedIn)
     {
-        balance += deposit(500);
+        balance += deposit(amount);
         return balance;
     }
     else
@@ -58,6 +58,47 @@ public double deposit(double amount)
     }
     
 }
+public double withdrawal(double amount)
+{
+    if (loggedIn == true)
+    {
+        balance -= withdrawal(amount);
+        return balance;
+    }
+    else
+    {
+        throw new IllegalStateException("Not logged in.");
+    }
+} 
+
+public boolean login(boolean possiblity)
+{
+    if (loggedIn == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+public void logOut()
+{
+    loggedIn = false;
+}
+public String toString()
+{
+    if (loggedIn = false)
+    {
+        return "Account Number:" + this.accountNum;
+    } 
+    else
+    {
+        return "balance:" + this.balance;  
+    }
+    
+}
+
 
 }
 
