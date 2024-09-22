@@ -49,8 +49,8 @@ public double deposit(double amount)
 {
     if (loggedIn)
     {
-        balance += deposit(amount);
-        return balance;
+        this.balance += amount;
+        return this.balance;
     }
     else
     {
@@ -62,8 +62,8 @@ public double withdrawal(double amount)
 {
     if (loggedIn == true)
     {
-        balance -= withdrawal(amount);
-        return balance;
+        this.balance -= amount;
+        return this.balance;
     }
     else
     {
@@ -90,11 +90,11 @@ public String toString()
 {
     if (loggedIn = false)
     {
-        return "Account Number:" + this.accountNum;
+        return "Account Name:" + name;
     } 
     else
     {
-        return "balance:" + this.balance;  
+        return "Account name: " + name + " Account Number: " + this.accountNum + " balance: " + this.balance;  
     }
     
 }
